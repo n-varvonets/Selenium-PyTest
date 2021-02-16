@@ -32,7 +32,16 @@ class LoginIWannaBe(unittest.TestCase):
             print(sys.exc_info())
 
         asddsad  = driver.find_element_by_class_name("login-img")
-
+        
+#         '''1st successful try'''
+#         driver = webdriver.Chrome(executable_path='C:/Users/nicko/Downloads/chromedriver_win32/chromedriver.exe')
+#         driver.get("http://www.python.org")
+#         assert "Python" in driver.title
+#         elem = driver.find_element_by_name("q")
+#         elem.send_keys("pycon")
+#         elem.send_keys(Keys.RETURN)
+#         assert "No results found." not in driver.page_source
+#         driver.close()
 
 
 
