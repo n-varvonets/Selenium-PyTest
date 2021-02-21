@@ -7,7 +7,7 @@ import sys
 
 class LoginIWannaBe(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(executable_path='C:/Users/nicko/Downloads/chromedriver_win32/chromedriver.exe')
         self.driver.get('https://iwannabe.web-magic.space/')
 
     def test_01(self):
@@ -32,8 +32,15 @@ class LoginIWannaBe(unittest.TestCase):
             print(sys.exc_info())
 
         asddsad  = driver.find_element_by_class_name("login-img")
-        
-#         '''1st successful try'''
+
+        assert "Python" in driver.title
+        elem = driver.find_element_by_name("q")
+        elem.send_keys("pycon")
+        elem.send_keys(Keys.RETURN)
+        assert "No results found." not in driver.page_source
+        driver.close()
+
+#         '''1st successful try: https://habr.com/ru/post/250921/  ''''
 #         driver = webdriver.Chrome(executable_path='C:/Users/nicko/Downloads/chromedriver_win32/chromedriver.exe')
 #         driver.get("http://www.python.org")
 #         assert "Python" in driver.title
@@ -43,15 +50,9 @@ class LoginIWannaBe(unittest.TestCase):
 #         assert "No results found." not in driver.page_source
 #         driver.close()
 
-
-
-        assert "Python" in driver.title
-        elem = driver.find_element_by_name("q")
-        elem.send_keys("pycon")
-        elem.send_keys(Keys.RETURN)
-        assert "No results found." not in driver.page_source
-        driver.close()
-
+    """2st successful try:Python + Selenium WebDriver - Видео №5"""
+    def test_2stTry (self):
+        driver = self.driver
 
     def tearDown(self):
         self.driver.quit()
