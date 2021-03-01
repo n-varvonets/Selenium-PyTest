@@ -4,14 +4,19 @@ def my_decorator(func):
 
     def wrapper():
         print("Я - функция, возвращаемая декоратором")
-        func()
+        return func()
 
-    return wrapper()
+    return wrapper  # МЫ ВОЗВРАЩАЕМ ОБЬЕКТ, а не вызываем функцию
+
 # Так что, мы можем вызывать её, не используя "@"-синтаксис:
 def lazy_function():
     print("zzzzzzzz")
 
 decorated_function = my_decorator(lazy_function)
+print('---')
+decorated_function()
+print('---')
+
 
 # выведет: Я обычная функция
 
@@ -20,6 +25,4 @@ decorated_function = my_decorator(lazy_function)
 
 @my_decorator
 def lazy_function():
-    print("zzzzzzzz")
-
-# выведет: Я обычная функция
+    print("zzzzzzzz")  # выведет: Я обычная функция
