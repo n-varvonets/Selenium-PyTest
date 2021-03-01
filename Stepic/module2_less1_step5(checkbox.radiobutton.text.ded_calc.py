@@ -13,7 +13,7 @@ def calc(x):
   return str(math.log(abs(12*math.sin(int(x)))))
 
 
-with webdriver.Chrome(executable_path='C:/Users/nicko/Downloads/chromedriver_win32/chromedriver.exe') as browser:
+with webdriver.Chrome(executable_path='C:/Users/NIk/PycharmProjects/chromedriver.exe') as browser:
     try:
         browser.get(link)
 

@@ -36,8 +36,6 @@ with webdriver.Chrome(executable_path='C:/Users/nicko/Downloads/chromedriver_win
         browser.execute_script("return arguments[0].scrollIntoView(true);", button).click()  # true, чтобы элемент после
         # скролла оказался в области видимости.
 
-
-
     except Exception as e:
         print(e)
     time.sleep(30)
