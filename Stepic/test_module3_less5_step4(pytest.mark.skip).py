@@ -24,7 +24,7 @@ class TestMainPage1():
         browser.find_element_by_css_selector(".basket-mini .btn-group > a")
 
 
-"""@pytest.mark.skip не требует дополнительного объявления в pytest.ini."""
+"""Метки @pytest.mark.skip не требует дополнительного объявления в pytest.ini."""
 
 
 
