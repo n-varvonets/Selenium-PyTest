@@ -1,30 +1,10 @@
-import pytest
-from selenium import webdriver
-import math
-import time
+"""Ранее мы добавили фикстуру browser, которая создает нам экземпляр браузера для тестов в данном файле.
+Когда файлов с тестами становится больше одного, приходится в каждом файле с тестами описывать данную фикстуру.
+Это очень неудобно.
 
-def calc(x):
-  return str(math.log(int(time.time() - 21.3)))
+Для хранения часто употребимых фикстур и хранения глобальных настроек нужно использовать файл conftest.py, который:
+а)должен лежать в директории верхнего уровня в вашем проекте с тестами.
+б)или быть в параллельной директрии по структуре (https://stepik.org/lesson/237240/step/4?unit=209628)
 
-
-@pytest.fixture(scope="function")
-def browser():
-    print("\nstart browser for test..")
-    browser = webdriver.Chrome(executable_path='C:/Users/NIk/PycharmProjects/chromedriver.exe')
-    yield browser
-    print("\nquit browser..")
-    browser.quit()
-
-@pytest.mark.parametrize('links', ["236895", "236896", "236897", "236898", "236899", "236903", "236904", "236905"])
-def test_guest_should_see_login_link(browser, links):
-    link = f"https://stepik.org/lesson/{links}/step/1/"
-    browser.get(link)
-    browser.implicitly_wait(5)
-    res = str(calc(time.time()))
-    browser.find_element_by_xpath("//textarea").send_keys(res)
-    browser.find_element_by_class_name("submit-submission").click()
-    correct = browser.find_element_by_class_name("smart-hints__hint").text
-    assert "Correct!" == correct
-
-# pytest -s -v test_module3_less6_step3.py
+Будьте внимательны и следите, чтобы не было разных conftest во вложенных друг в друга директориях"""
 
