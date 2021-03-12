@@ -29,6 +29,7 @@ def browser(request):
                                     firefox_profile=fp)
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
+    browser.maximize_window()
     yield browser
     print("\nquit browser..")
     browser.quit()
