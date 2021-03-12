@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 class BasePage():
 
-    def __init__(self, browser, url, timeout=10):  # добавим конструктор и в него мы передаем экземпляр драйвера и url адрес.
+    def __init__(self, browser, url, timeout=15):  # добавим конструктор и в него мы передаем экземпляр драйвера и url адрес.
         self.browser = browser  # Внутри конструктора сохраняем эти данные как аттрибуты нашего класса
         self.url = url
         """Чтобы выводить адекватное сообщение об ошибке, мы будем все проверки осуществлять с помощью assert и

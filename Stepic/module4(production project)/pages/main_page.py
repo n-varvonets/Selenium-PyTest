@@ -1,4 +1,5 @@
 from .base_page import BasePage
+from .locators import MainPageLocators
 from selenium.webdriver.common.by import By
 
 class MainPage(BasePage):
@@ -9,13 +10,18 @@ class MainPage(BasePage):
         чтобы иметь доступ к атрибутам и методам класс"""
 
     def go_to_login_page(self):
-        # login_link = self.browser.find_element_by_css_selector("#login_link")
-        login_link = self.browser.find_element(By.CSS_SELECTOR, "#login_link")
+        # login_link = self.browser.find_element_by_css_selector("#login_link")  №1
+        # login_link = self.browser.find_element(By.CSS_SELECTOR, "#login_link") №2
+        login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)  # №3
         login_link.click()
 
     """в классе MainPage нужно реализовать метод, который будет проверять наличие ссылки(login)"""
     def should_be_login_link(self):
-        # self.browser.find_element(By.CSS_SELECTOR, "#login_link_invalid")  # первончальный способ(до создани в
+        # self.browser.find_element(By.CSS_SELECTOR, "#login_link")  # №1 первончальный способ(до создани в
         # BasePage метода проверки присутствия элемента на странице is_element_present)
-        assert self.is_element_present(By.CSS_SELECTOR, "#login_link"), "Login link is not presented"  # используем
-        # созданный метод и добавляем возможнсоть осмысленного сообщение об ошибке
+
+        # assert self.is_element_present(By.CSS_SELECTOR, "#login_link"), "Login link is not presented" # №2 второй вариант
+        # используем созданный метод и добавляем возможнсоть осмысленного сообщение об ошибке (но без использования локаторов)
+
+        assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"  # символ *, он
+        # указывает на то, что мы передали именно пару, и этот кортеж нужно распаковать.
