@@ -8,7 +8,6 @@ class MainPageLocators():
 
 
 class LoginPageLocators():
-    LOGIN_URL = (By.CSS_SELECTOR, "#login_url")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FROM = (By.CSS_SELECTOR, "#register_form")
 
