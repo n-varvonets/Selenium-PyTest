@@ -10,8 +10,8 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         current_url = self.browser.current_url
-        # print(current_url) # http://selenium1py.pythonanywhere.com/en-gb/accounts/login/
-        assert current_url in "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/", "Login url is not presented"
+        print(current_url)  # http://selenium1py.pythonanywhere.com/en-gb/accounts/login/
+        assert current_url == "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/", "Login url is not presented"
 
     def should_be_login_form(self):
         assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Login form is not presented"
