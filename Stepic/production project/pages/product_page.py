@@ -2,7 +2,7 @@ from .base_page import BasePage
 from .locators import ProductPageLocators
 
 
-class AddTobasket(BasePage):
+class AddToBasket(BasePage):
     def check_methods_after_add_prod_to_cart(self):
         self.should_be_message_about_adding()
         self.should_be_message_basket_total()
