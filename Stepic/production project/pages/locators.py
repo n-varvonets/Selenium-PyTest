@@ -1,13 +1,10 @@
-"""орошей практикой является выносить селектор во внешнюю переменную"""
-
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")  # теперь каждый селектор — это пара: как искать и что искать.
-
-
-class LoginPageLocators():
-    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-    REGISTER_FROM = (By.CSS_SELECTOR, "#register_form")
+class ProductPageLocators():
+    ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    MESSAGE_ABOUT_ADDING = (By.CSS_SELECTOR, "div.alertinner")  # The shellcoder's handbook был добавлен в вашу корзину.
+    PRODUCT_NAME = (By.CSS_SELECTOR, "div.product_main h1")  # название книжки
+    MESSAGE_BASKET_TOTAL = (By.CSS_SELECTOR, ".alert-info .alertinner strong")  # общая цена товаров в корзине
+    PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")  # цена самого товара за штуку
 
