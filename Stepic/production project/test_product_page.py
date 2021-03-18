@@ -1,5 +1,4 @@
 import pytest
-
 from pages.product_page import AddToBasket
 
 # product_base_link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
