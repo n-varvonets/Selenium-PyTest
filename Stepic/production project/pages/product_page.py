@@ -20,7 +20,7 @@ class AddToBasket(BasePage):
         # Проверяем, что название товара присутствует в сообщении о добавлении
         # Это можно было бы сделать с помощью split() и сравнения строк, но не вижу необходимости усложнять код
         # print(product_name, "product_name and", message, "message") >>> The shellcoder's handbook product_name and The shellcoder's handbook был добавлен в вашу корзину. message
-        assert product_name in message, "No product name in the message"
+        assert product_name == message, f"No product name({product_name}) in the message({message})"
 
     def should_be_message_basket_total(self):
         # Сначала проверяем, что элементы присутствуют на странице
