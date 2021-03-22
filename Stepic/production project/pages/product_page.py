@@ -16,7 +16,7 @@ class AddToBasket(BasePage):
         assert self.is_element_present(*ProductPageLocators.MESSAGE_ABOUT_ADDING), ("Message about adding is not presented")
         # Затем получаем текст элементов для проверки
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text  # >>> The shellcoder's handbook
-        message = self.browser.find_element(*ProductPageLocators.MESSAGE_ABOUT_ADDING).text  # >>> The shellcoder's handbook был добавлен в вашу корзину.
+        message = self.browser.find_element(*ProductPageLocators.MESSAGE_ABOUT_ADDING).text  # >>> The shellcoder's handbook был добавлен в вашу корзину.(без strong)
         # Проверяем, что название товара присутствует в сообщении о добавлении
         # Это можно было бы сделать с помощью split() и сравнения строк, но не вижу необходимости усложнять код
         # print(product_name, "product_name and", message, "message") >>> The shellcoder's handbook product_name and The shellcoder's handbook был добавлен в вашу корзину. message
@@ -37,5 +37,9 @@ class AddToBasket(BasePage):
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_dissapear_of_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should not be"
 
