@@ -35,3 +35,7 @@ class AddToBasket(BasePage):
         # print(message_basket_total, "message_basket_total and", product_price, "product_price") >>>9,99 £ message_basket_total and 9,99 £ product_price
         assert product_price in message_basket_total, "No product price in the message"
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+

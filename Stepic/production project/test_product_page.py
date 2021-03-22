@@ -24,5 +24,17 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.check_methods_after_add_prod_to_cart()
 
 
+def test_guest_cant_see_success_message_after_adding_product_to_basket:
+    return None
+
+
+def test_guest_cant_see_success_message:
+    return None
+
+
+def test_message_disappeared_after_adding_product_to_basket:
+    return None
+
+
 # pytest -s -v --tb=line test_product_page.py
 
