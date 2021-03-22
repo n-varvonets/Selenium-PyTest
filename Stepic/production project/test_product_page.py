@@ -49,6 +49,5 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     page.add_to_basket()
     assert page.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), 'Sucsess messege isnt disappeared'
 
-
 # pytest -s -v --tb=line test_product_page.py
 
