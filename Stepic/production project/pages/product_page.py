@@ -7,8 +7,6 @@ class AddToBasket(BasePage):
         self.should_be_message_about_adding()
         self.should_be_message_basket_total()
 
-    def add_to_basket(self):
-        self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET).click()
 
     def should_be_message_about_adding(self):
         # Сначала проверяем, что элементы присутствуют на странице

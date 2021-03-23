@@ -12,6 +12,17 @@ class BasketPageLocators():
     BASKET_SMS_EMPTY = (By.CSS_SELECTOR, "#content_inner")
 
 
+class LoginPageLocators():
+    USER_LOGIN_NAME = (By.CSS_SELECTOR, "#id_login-username")
+    USER_LOGIN_EMAIL = (By.CSS_SELECTOR, "#id_login-password")
+    USER_REG_NAME = (By.CSS_SELECTOR, "#id_registration-email")
+    USER_LOGIN_PASS_1 = (By.CSS_SELECTOR, "#id_registration-password1")
+    USER_LOGIN_PASS_2 = (By.CSS_SELECTOR, "#id_registration-password2")
+    BTN_REG_SUBMIT = (By.CSS_SELECTOR, "[name='registration_submit']")
+
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+
 class ProductPageLocators():
     ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
     MESSAGE_ABOUT_ADDING = (By.CSS_SELECTOR, "div.alertinner strong")  # The shellcoder's handbook был добавлен в вашу корзину.(ез стронг)

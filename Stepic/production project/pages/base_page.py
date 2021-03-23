@@ -4,7 +4,7 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.common.exceptions import NoAlertPresentException  # в начале файла
 import math 
 from selenium.webdriver.support.wait import WebDriverWait
-from .locators import BasePageLocators , BasketPageLocators
+from .locators import BasePageLocators , BasketPageLocators, ProductPageLocators, LoginPageLocators
 
 
 class BasePage():
@@ -13,6 +13,9 @@ class BasePage():
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    def add_to_basket(self):
+        self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET).click()
+
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
@@ -20,6 +23,10 @@ class BasePage():
     def go_to_basket_page(self):
         link = self.browser.find_element(*BasketPageLocators.BASKET_LINK)
         link.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*LoginPageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
