@@ -6,7 +6,6 @@ from pages.locators import ProductPageLocators
 from pages.login_page import LoginPage
 import time
 
-
 # @pytest.mark.parametrize('link', [0, 1, pytest.param(7, marks=pytest.mark.xfail), 9])
 # def test_guest_can_add_product_to_basket(browser, link):
 #     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{link}"
