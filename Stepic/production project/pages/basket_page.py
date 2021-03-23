@@ -9,5 +9,8 @@ class BasketPage(BasePage):
         assert self.is_not_element_present(*BasketPageLocators.BASKET_ITEMS), ("BASKET ITEMS is presented")
 
     def should_be_text_about_empty_cart(self):
-        assert self.is_element_present(*BasketPageLocators.BASKET_SMS_EMPTY), (f"Text about empty is not present")
+        empty_basket = self.is_element_present(*BasketPageLocators.BASKET_EMPTY)
+        print(empty_basket, 'empty_basket')
+        print(empty_basket.text, 'empty_basket.text')
+        assert "Congratulations! You have successfully registered!" == empty_basket, ("Text about empty is not present")
 
