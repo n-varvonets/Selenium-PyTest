@@ -16,6 +16,14 @@ class BasePage():
     def add_to_basket(self):
         self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET).click()
 
+    def should_be_success_message_of_added_product(self):
+        assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_not_be_success_message_of_added_product(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
