@@ -1,5 +1,14 @@
 # Selenium-PyTest
 
+For running project for review you need:
+
+1)go to necessary directory with next cmd:
+- **cd Stepic/production project**
+
+2)execute cmd for running tests:
+- **pytest -s -v --tb=line test_product_page.py**  - for all tests
+- **pytest -v --tb=line --language=en -m need_review** -  for review marked tests
+
                       -------------------------------Stucure of module4-------------------------------
 **base_page.py** - тут мы храним методы которые применяются по всему проекту вообще, всё завернуто в класс, чтобы было удобно импортировать.
 
