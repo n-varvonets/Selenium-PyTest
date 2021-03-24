@@ -5,7 +5,7 @@ for review. For running project you need:
 1) Go to necessary directory for testing project by next cmd(if you are in project root directory):
 - **cd Stepic/production project**
 
-2) Сonfigure your web driver in **conftest.py** (by default there is my own directory to driver in 22 line - you will be have a different value)
+2) Сonfigure your web driver in **conftest.py** (22 line)
 
 
 3) Install packages of the environment:
