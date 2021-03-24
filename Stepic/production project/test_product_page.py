@@ -4,7 +4,7 @@ from pages.basket_page import BasketPage
 import time
 
 
-class TestUserCanWorkWithBasketPage:
+class TestUserAddToBasketFromProductPage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         email = str(time.time()) + "@fakemail.org"
