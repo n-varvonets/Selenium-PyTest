@@ -25,6 +25,7 @@ class TestUserCanWorkWithBasketPage:
         self.page.open()
 
     # 1)test_user_can_add_product_to_basket
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
         self.page.add_to_basket()
         self.page.should_be_success_message_of_added_product()
@@ -38,11 +39,13 @@ class TestGuestCanWorkWithBasketPage:
         self.page.open()
 
     # 2)test_guest_can_add_product_to_basket
+    @pytest.mark.need_review
     def test_guest_can_add_product_to_basket(self):
         self.page.add_to_basket()
         self.page.should_be_success_message_of_added_product()
 
     # 3)test_guest_cant_see_product_in_basket_opened_from_product_page
+    @pytest.mark.need_review
     def test_guest_cant_see_product_in_basket_opened_from_product_page(self):
         self.page.go_to_basket_page()
         self.page.should_be_text_about_empty_cart(), "Product in basket, but should not be"
@@ -56,6 +59,7 @@ class TestGuestCanWorkWithLoginPage:
         self.page.open()
 
     # 4)test_guest_can_go_to_login_page_from_product_page
+    @pytest.mark.need_review
     def test_guest_can_go_to_login_page_from_product_page(self):
         self.page.go_to_login_page()
         self.page.should_be_login_page()
