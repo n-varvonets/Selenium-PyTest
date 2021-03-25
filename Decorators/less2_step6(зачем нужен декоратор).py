@@ -16,7 +16,6 @@ def benchmark(func):
 
     return wrapper
 
-
 def logging(func):
     """
     Декоратор, логирующий работу кода.
@@ -82,7 +81,6 @@ def get_random_futurama_quote():
         if key.startswith("x-b") or key.startswith("x-f"):
             return value
     return "Эх, нет... не могу!"
-
 
 print(get_random_futurama_quote())
 print(get_random_futurama_quote())
