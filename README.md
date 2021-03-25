@@ -1,7 +1,5 @@
 # Selenium-PyTest
 
-# Selenium-PyTest
-
 For running project for review you need:
 
 1) Go to necessary directory with next cmd(if it necessary):
