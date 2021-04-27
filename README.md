@@ -1,6 +1,8 @@
 # Selenium-PyTest
 
-For running project for review you need:
+**In the fourth module, you can see my example of using Page Object Pattern**
+
+        ------------------------------- For running project for review you need: -------------------------------
 
 1) Go to necessary directory with next cmd(if it necessary):
 - **cd Stepic/production project**
